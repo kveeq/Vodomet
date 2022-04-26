@@ -24,5 +24,15 @@ namespace Vodomet.View
         {
             InitializeComponent();
         }
+
+        private void SaveSettingsBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
