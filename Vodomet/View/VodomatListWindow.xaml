@@ -11,8 +11,7 @@
     WindowState="Maximized"
     mc:Ignorable="d">
     <Grid>
-        <TabControl Style="{DynamicResource MaterialDesignNavigationRailTabControl}">
-
+        <TabControl IsSynchronizedWithCurrentItem="True" Style="{DynamicResource MaterialDesignNavigationRailTabControl}">
             <TabItem
                 Width="170"
                 Background="{x:Null}"
@@ -20,26 +19,27 @@
                 Header="Автоматы">
                 <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
                     <Grid Background="#FFE5E5E5">
-                        <ListView>
+                        <ListView x:Name="VodomatLstView">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn>
-                                        <Button Click="Button_Click" Background="Bisque">Настроки</Button>
+                                        <Button Background="Bisque" Click="Button_Click" Cursor="Hand">Настроки</Button>
                                     </GridViewColumn>
-                                    <GridViewColumn>ID</GridViewColumn>
-                                    <GridViewColumn>Адрес</GridViewColumn>
-                                    <GridViewColumn>Копилка</GridViewColumn>
-                                    <GridViewColumn>Всего л.</GridViewColumn>
-                                    <GridViewColumn>ПО</GridViewColumn>
-                                    <GridViewColumn>Удар</GridViewColumn>
-                                    <GridViewColumn>Мало воды</GridViewColumn>
-                                    <GridViewColumn>нет воды</GridViewColumn>
-                                    <GridViewColumn>бак полон</GridViewColumn>
-                                    <GridViewColumn>засор</GridViewColumn>
-                                    <GridViewColumn>Тем-ра</GridViewColumn>
-                                    <GridViewColumn>нет 220</GridViewColumn>
-                                    <GridViewColumn>MDB</GridViewColumn>
-                                    <GridViewColumn>ПС</GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Id}">ID
+                                    </GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Name}">Адрес</GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Kopilka}">Копилка</GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding AmountLitres}">Всего л.</GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding PO}">ПО</GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Hit}">Удар</GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding LowWater}">Мало воды</GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding NoWater}">нет воды</GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding FullTank}">бак полон</GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Clag}">засор</GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Temp}">Тем-ра</GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding No220B}">нет 220</GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding MDB}">MDB</GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding PC}">ПС</GridViewColumn> 
                                 </GridView>
                             </ListView.View>
                         </ListView>
@@ -54,7 +54,7 @@
 
 
             <TabItem Width="170" Header="Инкассаторы">
-                <Grid Background="#FF795959" />
+                <Grid Background="#FFE5E5E5" />
             </TabItem>
 
 

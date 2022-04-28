@@ -14,19 +14,19 @@
 
     <Grid Background="#FFB9DEFF">
         <Grid.RowDefinitions>
-            <RowDefinition Height="45*" />
-            <RowDefinition Height="45*" />
-            <RowDefinition Height="45*" />
-            <RowDefinition Height="45*" />
-            <RowDefinition Height="45*" />
-            <RowDefinition Height="45*" />
-            <RowDefinition Height="45*" />
-            <RowDefinition Height="45*" />
-            <RowDefinition Height="45*" />
-            <RowDefinition Height="45*" />
-            <RowDefinition Height="45*" />
-            <RowDefinition Height="45*" />
-            <RowDefinition Height="45*" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="33.388" />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="119*" />
@@ -551,12 +551,13 @@
             VerticalAlignment="Center"
             Style="{x:Null}"
             Text="100" />
-        <Label
+        <TextBlock
             Grid.Row="11"
             Grid.Column="2"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Content="Цена литра, нал" />
+            Text="Цена литра, нал"
+            TextWrapping="WrapWithOverflow" />
         <TextBox
             Grid.Row="11"
             Grid.Column="3"
@@ -565,12 +566,13 @@
             VerticalAlignment="Center"
             Style="{x:Null}"
             Text="3.50" />
-        <Label
+        <TextBlock
             Grid.Row="11"
             Grid.Column="4"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Content="Цена товара 1, нал" />
+            Text="Цена товара 1, нал"
+            TextWrapping="WrapWithOverflow" />
         <TextBox
             Grid.Row="11"
             Grid.Column="5"
@@ -579,12 +581,13 @@
             VerticalAlignment="Center"
             Style="{x:Null}"
             Text="25.00" />
-        <Label
+        <TextBlock
             Grid.Row="11"
             Grid.Column="6"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Content="Цена товара 2, нал" />
+            Text="Цена товара 2, нал"
+            TextWrapping="WrapWithOverflow" />
         <TextBox
             Grid.Row="11"
             Grid.Column="7"
@@ -624,12 +627,13 @@
             Style="{x:Null}"
             Text="1000" />
 
-        <Label
+        <TextBlock
             Grid.Row="12"
             Grid.Column="2"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Content="Цена литра, безнал" />
+            Text="Цена литра, безнал"
+            TextWrapping="WrapWithOverflow" />
         <TextBox
             Grid.Row="12"
             Grid.Column="3"
@@ -638,10 +642,13 @@
             VerticalAlignment="Center"
             Style="{x:Null}"
             Text="3.50" />
-        <Label
+        <TextBlock
             Grid.Row="12"
             Grid.Column="4"
-            Content="Цена товара 1, безнал" />
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Text="Цена товара 1, безнал"
+            TextWrapping="Wrap" />
         <TextBox
             Grid.Row="12"
             Grid.Column="5"
@@ -650,10 +657,13 @@
             VerticalAlignment="Center"
             Style="{x:Null}"
             Text="20.00" />
-        <Label
+        <TextBlock
             Grid.Row="12"
             Grid.Column="6"
-            Content="Цена товара 2, безнал" />
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Text="Цена товара 2, безнал"
+            TextWrapping="WrapWithOverflow" />
         <TextBox
             Grid.Row="12"
             Grid.Column="7"

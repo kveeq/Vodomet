@@ -1,16 +1,6 @@
-﻿using System;
+﻿using System.Windows;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Vodomet.Model;
 
 namespace Vodomet.View
 {
@@ -22,10 +12,12 @@ namespace Vodomet.View
         public VodomatListWindow()
         {
             InitializeComponent();
+            List<Vodomat> lst = new List<Vodomat>() { new Vodomat() { Id = 1, Address = "qwerty" }, new Vodomat() { Id = 2, Address = "qwerty2" }, new Vodomat() { Id = 3, Address = "qwerty3" } };
+            VodomatLstView.ItemsSource = lst;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
+        {   
             VodomatSettingsPage vodomatSettingsPage = new VodomatSettingsPage();
             vodomatSettingsPage.Show();
         }
