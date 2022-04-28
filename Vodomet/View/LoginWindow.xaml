@@ -17,6 +17,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <TextBox
+            x:Name="txtLogin"
             Width="282"
             Height="57"
             Margin="244,160,0,0"
@@ -28,6 +29,7 @@
             FontSize="18"
             TextWrapping="Wrap" />
         <PasswordBox
+            x:Name="txtPass"
             Width="282"
             Height="57"
             Margin="244,222,0,0"
@@ -44,8 +46,8 @@
             Margin="314,307,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Войти"
             Click="Button_Click"
+            Content="Войти"
             Cursor="Hand" />
 
     </Grid>

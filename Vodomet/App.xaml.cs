@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Vodomet.Model;
 
 namespace Vodomet
 {
@@ -13,5 +14,7 @@ namespace Vodomet
     /// </summary>
     public partial class App : Application
     {
+        public static readonly string connectionString = @"Data Source=DESKTOP-F0LHM74\SQLEXPRESS;Initial Catalog=Vodomet;Integrated Security=True";
+        public static User user;
     }
 }
