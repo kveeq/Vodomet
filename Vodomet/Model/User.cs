@@ -28,7 +28,7 @@ namespace Vodomet.Model
                 connection.Open();
 
                 SqlCommand command = new SqlCommand(sqlExpression, connection);
-                SqlDataReader reader = command.ExecuteReader();
+                SqlDataReader reader = command.ExecuteReader(); 
 
                 User user = null;
                 if (reader.HasRows) // если есть данные
