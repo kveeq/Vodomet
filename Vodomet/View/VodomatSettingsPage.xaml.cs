@@ -8,7 +8,7 @@ namespace Vodomet.View
     /// </summary>
     public partial class VodomatSettingsPage : Window
     {
-        public Vodomat vodomat;
+        public Vodomat? vodomat;
         public VodomatSettingsPage()
         {
             InitializeComponent();

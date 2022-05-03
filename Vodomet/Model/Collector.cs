@@ -8,10 +8,10 @@ namespace Vodomet.Model
 {
     public class Collector
     {
-        public DateOnly Date { get; set; }
-        public string IdKey { get; set; }
-        public string CollectorName { get; set; }
-        public string comment { get; set; }
-        public bool Permission { get; set; }
+        public DateTime Date { get; set; }
+        public string? IdKey { get; set; }
+        public string? CollectorName { get; set; }
+        public string? comment { get; set; }
+        public bool? Permission { get; set; }
     }
 }

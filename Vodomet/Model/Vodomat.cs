@@ -31,10 +31,10 @@ namespace Vodomet.Model
             PC = pC;
         }
 
-        public int Id { get; set; }
-        public string Address { get; set; }
-        public double Kopilka { get; set; }
-        public double AmountLitres { get; set; }
+        public int? Id { get; set; }
+        public string? Address { get; set; }
+        public double? Kopilka { get; set; }
+        public double? AmountLitres { get; set; }
         public int PO { get; set; }
         public DateTime Hit { get; set; }
         public DateTime LowWater { get; set; }
@@ -46,24 +46,24 @@ namespace Vodomet.Model
         public DateTime MDB { get; set; }
         public DateTime PC { get; set; }
 
-        public Setting Settings { get; set; }
+        public Setting? Settings { get; set; }
         public int IdSettings { get; set; }
-        public string FirmWareVersion { get; set; }
+        public string? FirmWareVersion { get; set; }
         public int IdMarketing { get; set; }
 
 
         public static List<Vodomat> GetVodomats()
         {
             string sqlExpression = $"SELECT * FROM Vodomat";
-            using (SqlConnection connection = new SqlConnection(App.connectionString))
+            using (SqlConnection connection = new(App.connectionString))
             {
                 connection.Open();
 
-                SqlCommand command = new SqlCommand(sqlExpression, connection);
+                SqlCommand command = new(sqlExpression, connection);
                 SqlDataReader reader = command.ExecuteReader();
 
-                Vodomat user = null;
-                List<Vodomat> vodomats = new List<Vodomat>();
+                Vodomat? user = null;
+                List<Vodomat> vodomats = new();
 
                 if (reader.HasRows) // если есть данные
                 {
@@ -94,7 +94,6 @@ namespace Vodomet.Model
                 reader.Close();
                 return vodomats;
             }
-
         }
     }
 }

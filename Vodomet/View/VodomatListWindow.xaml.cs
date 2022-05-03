@@ -15,7 +15,7 @@ namespace Vodomet.View
             InitializeComponent();
             List<Vodomat> lst = Vodomat.GetVodomats();
             VodomatLstView.ItemsSource = lst;
-            List<Collector> list = new List<Collector>() { new Collector() { CollectorName = "ff"}, new Collector() { CollectorName = "ff"},  };
+            List<Collector> list = new() { new Collector() { CollectorName = "ff"}, new Collector() { CollectorName = "ff"},  };
             CollectorsLstView.ItemsSource = list;
         }
 

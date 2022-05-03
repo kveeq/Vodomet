@@ -10,15 +10,15 @@ namespace Vodomet.Model
     public class User
     {
         public int Id { get; set; } 
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string Patronymic { get; set; }
-        public string Email { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public string Role { get; set; }
-        public static event Action<string> UnSuccessLogin;
+        public string? Name { get; set; }
+        public string? Surname { get; set; }
+        public string? Patronymic { get; set; }
+        public string? Email { get; set; }
+        public string? PhoneNumber { get; set; }
+        public string? Login { get; set; }
+        public string? Password { get; set; }
+        public string? Role { get; set; }
+        public static event Action<string>? UnSuccessLogin;
 
         public static void LogIn(string login, string pass)
         {
@@ -30,13 +30,13 @@ namespace Vodomet.Model
                 SqlCommand command = new SqlCommand(sqlExpression, connection);
                 SqlDataReader reader = command.ExecuteReader(); 
 
-                User user = null;
+                User? user = null;
                 if (reader.HasRows) // если есть данные
                 {
                     while (reader.Read()) // построчно считываем данные
                     {
                         user = new User();
-                        user.Id = int.Parse(reader.GetValue(6).ToString());
+                        user.Id = int.Parse(reader.GetValue(6)?.ToString());
                         user.Role = reader.GetValue(1).ToString();
                         user.Login = reader.GetValue(4).ToString();
                         user.Password = reader.GetValue(5).ToString();
