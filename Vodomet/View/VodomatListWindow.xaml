@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Vodomet.View"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="VodomatListWindow"
     Width="800"
@@ -22,21 +23,7 @@
                         <ListView x:Name="VodomatLstView" SelectionChanged="ListView_SelectionChanged">
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn>
-                                        <GridViewColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <Button HorizontalAlignment="Center" Content="123" />
-                                            </DataTemplate>
-                                        </GridViewColumn.CellTemplate>
-                                        <Button
-                                            x:Name="btn1"
-                                            Background="Bisque"
-                                            Click="Button_Click"
-                                            Cursor="Hand">
-                                            Настройки
-                                        </Button>
-                                    </GridViewColumn>
-                                    <GridViewColumn DisplayMemberBinding="{Binding Id}" >ID</GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Id}">ID</GridViewColumn>
                                     <GridViewColumn DisplayMemberBinding="{Binding Name}">Адрес</GridViewColumn>
                                     <GridViewColumn DisplayMemberBinding="{Binding Kopilka}">Копилка</GridViewColumn>
                                     <GridViewColumn DisplayMemberBinding="{Binding AmountLitres}">Всего л.</GridViewColumn>
@@ -166,10 +153,33 @@
                                 <GridViewColumn DisplayMemberBinding="{Binding Name}">Инкассатор</GridViewColumn>
                                 <GridViewColumn DisplayMemberBinding="{Binding Kopilka}">Примечание</GridViewColumn>
                                 <GridViewColumn DisplayMemberBinding="{Binding AmountLitres}">Права</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Button}" />
-                                <GridViewColumn DisplayMemberBinding="{Binding Hit}">Бонус</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding LowWater}">Добавленный бонус</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding NoWater}">Группа</GridViewColumn>
+                                <GridViewColumn Header="Редактировать">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button HorizontalAlignment="Center">
+                                                <materialDesign:PackIcon Kind="Pencil" />
+                                            </Button>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Удалить">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button HorizontalAlignment="Center">
+                                                <materialDesign:PackIcon Kind="Delete" />
+                                            </Button>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Мастер">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button HorizontalAlignment="Center">
+                                                <materialDesign:PackIcon Kind="Key" />
+                                            </Button>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
                             </GridView>
                         </ListView.View>
                     </ListView>

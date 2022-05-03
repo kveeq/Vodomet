@@ -13,13 +13,10 @@ namespace Vodomet.View
         public VodomatListWindow()
         {
             InitializeComponent();
-            Button button = new Button();
-            button.Width = 100;
-            button.Height = 50;
-            button.Background = btn1.Background;
-            button.Content = "123";
-            List<Vodomat> lst = new List<Vodomat>() { new Vodomat() { Id = 1, Address = "qwerty" , Button = button}, new Vodomat() { Id = 2, Address = "qwerty2" }, new Vodomat() { Id = 3, Address = "qwerty3" } };
+            List<Vodomat> lst = Vodomat.GetVodomats();
             VodomatLstView.ItemsSource = lst;
+            List<Collector> list = new List<Collector>() { new Collector() { CollectorName = "ff"}, new Collector() { CollectorName = "ff"},  };
+            CollectorsLstView.ItemsSource = list;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -28,10 +25,9 @@ namespace Vodomet.View
             vodomatSettingsPage.Show();
         }
 
-        private void ListView_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var qq = sender as ListView;
-            var vodomat = ((Vodomat)qq.SelectedItem);
+            var vodomat = (Vodomat)(sender as ListView).SelectedItem;
             MessageBox.Show(vodomat.Address);
             VodomatSettingsPage vodomatSettingsPage = new VodomatSettingsPage() { vodomat = vodomat};
             vodomatSettingsPage.Show();
