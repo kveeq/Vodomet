@@ -19,14 +19,24 @@
                 Header="Автоматы">
                 <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
                     <Grid Background="#FFE5E5E5">
-                        <ListView x:Name="VodomatLstView">
+                        <ListView x:Name="VodomatLstView" SelectionChanged="ListView_SelectionChanged">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn>
-                                        <Button Background="Bisque" Click="Button_Click" Cursor="Hand">Настроки</Button>
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button HorizontalAlignment="Center" Content="123" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                        <Button
+                                            x:Name="btn1"
+                                            Background="Bisque"
+                                            Click="Button_Click"
+                                            Cursor="Hand">
+                                            Настройки
+                                        </Button>
                                     </GridViewColumn>
-                                    <GridViewColumn DisplayMemberBinding="{Binding Id}">ID
-                                    </GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Id}" >ID</GridViewColumn>
                                     <GridViewColumn DisplayMemberBinding="{Binding Name}">Адрес</GridViewColumn>
                                     <GridViewColumn DisplayMemberBinding="{Binding Kopilka}">Копилка</GridViewColumn>
                                     <GridViewColumn DisplayMemberBinding="{Binding AmountLitres}">Всего л.</GridViewColumn>
@@ -39,7 +49,7 @@
                                     <GridViewColumn DisplayMemberBinding="{Binding Temp}">Тем-ра</GridViewColumn>
                                     <GridViewColumn DisplayMemberBinding="{Binding No220B}">нет 220</GridViewColumn>
                                     <GridViewColumn DisplayMemberBinding="{Binding MDB}">MDB</GridViewColumn>
-                                    <GridViewColumn DisplayMemberBinding="{Binding PC}">ПС</GridViewColumn> 
+                                    <GridViewColumn DisplayMemberBinding="{Binding PC}">ПС</GridViewColumn>
                                 </GridView>
                             </ListView.View>
                         </ListView>
@@ -49,12 +59,121 @@
 
 
             <TabItem Width="170" Header="Ключи">
-                <Grid Background="#FFE5E5E5" />
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid
+                        Grid.Row="0"
+                        Width="500"
+                        HorizontalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                            <TextBlock
+                                Margin="10"
+                                FontSize="16"
+                                Text="Показать ключ по ФИО" />
+                            <ComboBox
+                                x:Name="UsersCmbBox"
+                                Margin="30,0,0,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top" />
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal">
+                            <TextBlock
+                                Margin="10"
+                                FontSize="16"
+                                Text="Фильтр по группе" />
+                            <ComboBox
+                                x:Name="GroupsCmbBox"
+                                Margin="30,0,0,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top" />
+                        </StackPanel>
+                    </Grid>
+                    <Canvas
+                        Grid.Row="1"
+                        Height="50"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Top"
+                        Background="Blue">
+                        <Label
+                            Margin="350,0"
+                            Padding="10"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Center"
+                            Content="Ключи оператора Чистая вода сервис ООО (Всего: 4)"
+                            FontSize="20"
+                            Foreground="White" />
+                    </Canvas>
+
+                    <ListView
+                        x:Name="KeysLstView"
+                        Grid.Row="1"
+                        Margin="0,50,0,0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding AccId}">Аккаунт</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Id}">ID</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Name}">Пароль ЛК</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Kopilka}">ФИО</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding AmountLitres}">Цена</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding PO}">Баланс</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Hit}">Бонус</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding LowWater}">Добавленный бонус</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding NoWater}">Группа</GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
             </TabItem>
 
 
             <TabItem Width="170" Header="Инкассаторы">
-                <Grid Background="#FFE5E5E5" />
+                <Grid Background="#FFE5E5E5">
+                    <Canvas
+                        Grid.Row="1"
+                        Height="50"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Top"
+                        Background="Blue">
+                        <Label
+                            Margin="350,0"
+                            Padding="10"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Center"
+                            Content="Инкассаторы оператора Чистая вода сервис ООО (Всего: 4)"
+                            FontSize="20"
+                            Foreground="White" />
+                    </Canvas>
+
+                    <ListView
+                        x:Name="CollectorsLstView"
+                        Grid.Row="1"
+                        Margin="0,50,0,0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding AccId}">Дата</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Id}">ID ключа</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Name}">Инкассатор</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Kopilka}">Примечание</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding AmountLitres}">Права</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Button}" />
+                                <GridViewColumn DisplayMemberBinding="{Binding Hit}">Бонус</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding LowWater}">Добавленный бонус</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding NoWater}">Группа</GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
             </TabItem>
 
 

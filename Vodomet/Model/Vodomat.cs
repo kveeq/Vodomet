@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Vodomet.Model
 {
@@ -43,6 +44,9 @@ namespace Vodomet.Model
         public DateOnly No220B { get; set; }
         public DateOnly MDB { get; set; }
         public DateOnly PC { get; set; }
+        public Button Button { get; set; }
+
+        public Setting Settings { get; set; }
 
     }
 }

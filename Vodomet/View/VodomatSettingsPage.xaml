@@ -25,7 +25,7 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
-            <RowDefinition Height="33.388" />
+            <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -114,31 +114,31 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Content="Дребезг" />
-        <ComboBox
+        <ComboBox x:Name="DrebezgHitCmbBox"
             Grid.Row="2"
             Grid.Column="1"
             Margin="10,0,10,0" />
-        <ComboBox
+        <ComboBox x:Name="DrebezgLowWaterCmbBox"
             Grid.Row="2"
             Grid.Column="2"
             Margin="10,0,10,0" />
-        <ComboBox
+        <ComboBox x:Name="DrebezgNoWaterCmbBox"
             Grid.Row="2"
             Grid.Column="3"
             Margin="10,0,10,0" />
-        <ComboBox
+        <ComboBox x:Name="DrebezgFullTankCmbBox"
             Grid.Row="2"
             Grid.Column="4"
             Margin="10,0,10,0" />
-        <ComboBox
+        <ComboBox x:Name="DrebezgNo220BCmbBox"
             Grid.Row="2"
             Grid.Column="5"
             Margin="10,0,10,0" />
-        <ComboBox
+        <ComboBox x:Name="DrebezgMovementCmbBox"
             Grid.Row="2"
             Grid.Column="6"
             Margin="10,0,10,0" />
-        <ComboBox
+        <ComboBox x:Name="DrebezgTempCmbBox"
             Grid.Row="2"
             Grid.Column="7"
             Margin="10,0,10,0" />
@@ -150,37 +150,37 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Content="Восстановление" />
-        <ComboBox
+        <ComboBox x:Name="RecoveryHitCmbBox"
             Grid.Row="3"
             Grid.Column="1"
             Margin="10,0"
             VerticalAlignment="Center" />
-        <ComboBox
+        <ComboBox x:Name="RecoveryLowWaterCmbBox"
             Grid.Row="3"
             Grid.Column="2"
             Margin="10,0"
             VerticalAlignment="Center" />
-        <ComboBox
+        <ComboBox x:Name="RecoveryNoWaterCmbBox"
             Grid.Row="3"
             Grid.Column="3"
             Margin="10,0"
             VerticalAlignment="Center" />
-        <ComboBox
+        <ComboBox x:Name="RecoveryFullTankCmbBox"
             Grid.Row="3"
             Grid.Column="4"
             Margin="10,0"
             VerticalAlignment="Center" />
-        <ComboBox
+        <ComboBox x:Name="RecoveryNo220BCmbBox"
             Grid.Row="3"
             Grid.Column="5"
             Margin="10,0"
             VerticalAlignment="Center" />
-        <ComboBox
+        <ComboBox x:Name="RecoveryMovementCmbBox"
             Grid.Row="3"
             Grid.Column="6"
             Margin="10,0"
             VerticalAlignment="Center" />
-        <ComboBox
+        <ComboBox x:Name="RecoveryTempCmbBox"
             Grid.Row="3"
             Grid.Column="7"
             Margin="10,0"
@@ -193,25 +193,25 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Content="Срабатывание на" />
-        <CheckBox
+        <CheckBox x:Name="TriggerHitCheck"
             Grid.Row="4"
             Grid.Column="1"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Content="Размыкание" />
-        <CheckBox
+        <CheckBox x:Name="TriggerLowWaterCheck"
             Grid.Row="4"
             Grid.Column="2"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Content="Размыкание" />
-        <CheckBox
+        <CheckBox x:Name="TriggerNoWaterCheck"
             Grid.Row="4"
             Grid.Column="3"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Content="Размыкание" />
-        <CheckBox
+        <CheckBox x:Name="TrggerFullTankCheck"
             Grid.Row="4"
             Grid.Column="4"
             HorizontalAlignment="Center"
@@ -224,14 +224,14 @@
             VerticalAlignment="Center"
             Content="Фиксировано"
             FontWeight="Bold" />
-        <CheckBox
+        <CheckBox x:Name="TriggerMovementCheck"
             Grid.Row="4"
             Grid.Column="6"
             Height="18"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Content="Размыкание" />
-        <Label
+        <Label x:Name="CurrentTemp"
             Grid.Row="4"
             Grid.Column="7"
             HorizontalAlignment="Center"
