@@ -42,6 +42,7 @@
         </Grid.ColumnDefinitions>
 
         <Label
+            x:Name="IdLbl"
             Grid.Column="0"
             Grid.ColumnSpan="10"
             HorizontalAlignment="Center"
@@ -114,31 +115,38 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Content="Дребезг" />
-        <ComboBox x:Name="DrebezgHitCmbBox"
+        <ComboBox
+            x:Name="DrebezgHitCmbBox"
             Grid.Row="2"
             Grid.Column="1"
             Margin="10,0,10,0" />
-        <ComboBox x:Name="DrebezgLowWaterCmbBox"
+        <ComboBox
+            x:Name="DrebezgLowWaterCmbBox"
             Grid.Row="2"
             Grid.Column="2"
             Margin="10,0,10,0" />
-        <ComboBox x:Name="DrebezgNoWaterCmbBox"
+        <ComboBox
+            x:Name="DrebezgNoWaterCmbBox"
             Grid.Row="2"
             Grid.Column="3"
             Margin="10,0,10,0" />
-        <ComboBox x:Name="DrebezgFullTankCmbBox"
+        <ComboBox
+            x:Name="DrebezgFullTankCmbBox"
             Grid.Row="2"
             Grid.Column="4"
             Margin="10,0,10,0" />
-        <ComboBox x:Name="DrebezgNo220BCmbBox"
+        <ComboBox
+            x:Name="DrebezgNo220BCmbBox"
             Grid.Row="2"
             Grid.Column="5"
             Margin="10,0,10,0" />
-        <ComboBox x:Name="DrebezgMovementCmbBox"
+        <ComboBox
+            x:Name="DrebezgMovementCmbBox"
             Grid.Row="2"
             Grid.Column="6"
             Margin="10,0,10,0" />
-        <ComboBox x:Name="DrebezgTempCmbBox"
+        <ComboBox
+            x:Name="DrebezgTempCmbBox"
             Grid.Row="2"
             Grid.Column="7"
             Margin="10,0,10,0" />
@@ -150,37 +158,44 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Content="Восстановление" />
-        <ComboBox x:Name="RecoveryHitCmbBox"
+        <ComboBox
+            x:Name="RecoveryHitCmbBox"
             Grid.Row="3"
             Grid.Column="1"
             Margin="10,0"
             VerticalAlignment="Center" />
-        <ComboBox x:Name="RecoveryLowWaterCmbBox"
+        <ComboBox
+            x:Name="RecoveryLowWaterCmbBox"
             Grid.Row="3"
             Grid.Column="2"
             Margin="10,0"
             VerticalAlignment="Center" />
-        <ComboBox x:Name="RecoveryNoWaterCmbBox"
+        <ComboBox
+            x:Name="RecoveryNoWaterCmbBox"
             Grid.Row="3"
             Grid.Column="3"
             Margin="10,0"
             VerticalAlignment="Center" />
-        <ComboBox x:Name="RecoveryFullTankCmbBox"
+        <ComboBox
+            x:Name="RecoveryFullTankCmbBox"
             Grid.Row="3"
             Grid.Column="4"
             Margin="10,0"
             VerticalAlignment="Center" />
-        <ComboBox x:Name="RecoveryNo220BCmbBox"
+        <ComboBox
+            x:Name="RecoveryNo220BCmbBox"
             Grid.Row="3"
             Grid.Column="5"
             Margin="10,0"
             VerticalAlignment="Center" />
-        <ComboBox x:Name="RecoveryMovementCmbBox"
+        <ComboBox
+            x:Name="RecoveryMovementCmbBox"
             Grid.Row="3"
             Grid.Column="6"
             Margin="10,0"
             VerticalAlignment="Center" />
-        <ComboBox x:Name="RecoveryTempCmbBox"
+        <ComboBox
+            x:Name="RecoveryTempCmbBox"
             Grid.Row="3"
             Grid.Column="7"
             Margin="10,0"
@@ -193,25 +208,29 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Content="Срабатывание на" />
-        <CheckBox x:Name="TriggerHitCheck"
+        <CheckBox
+            x:Name="TriggerHitCheck"
             Grid.Row="4"
             Grid.Column="1"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Content="Размыкание" />
-        <CheckBox x:Name="TriggerLowWaterCheck"
+        <CheckBox
+            x:Name="TriggerLowWaterCheck"
             Grid.Row="4"
             Grid.Column="2"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Content="Размыкание" />
-        <CheckBox x:Name="TriggerNoWaterCheck"
+        <CheckBox
+            x:Name="TriggerNoWaterCheck"
             Grid.Row="4"
             Grid.Column="3"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Content="Размыкание" />
-        <CheckBox x:Name="TrggerFullTankCheck"
+        <CheckBox
+            x:Name="TrggerFullTankCheck"
             Grid.Row="4"
             Grid.Column="4"
             HorizontalAlignment="Center"
@@ -224,14 +243,16 @@
             VerticalAlignment="Center"
             Content="Фиксировано"
             FontWeight="Bold" />
-        <CheckBox x:Name="TriggerMovementCheck"
+        <CheckBox
+            x:Name="TriggerMovementCheck"
             Grid.Row="4"
             Grid.Column="6"
             Height="18"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Content="Размыкание" />
-        <Label x:Name="CurrentTemp"
+        <Label
+            x:Name="CurrentTemp"
             Grid.Row="4"
             Grid.Column="7"
             HorizontalAlignment="Center"
@@ -321,7 +342,9 @@
             VerticalAlignment="Center"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
-            Content="Режим бесплатной выдачи воды" />
+            Content="Режим бесплатной выдачи воды"
+            DataContext="{Binding Settings}"
+            IsChecked="{Binding FreeWaterDeliveryMode}" />
 
         <Label
             Grid.Row="6"
@@ -394,8 +417,9 @@
             VerticalAlignment="Center"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
+            DataContext="{Binding Settings}"
             Style="{x:Null}"
-            Text="18" />
+            Text="{Binding TimeOfShowKeysBalance}" />
         <StackPanel
             Grid.Row="7"
             Grid.Column="5"
@@ -452,14 +476,16 @@
                 HorizontalAlignment="Center"
                 Content="Дополнительная информация" />
         </StackPanel>
-        <RichTextBox
+        <TextBox
+            x:Name="FirmWareTxt"
             Grid.Row="8"
             Grid.RowSpan="2"
             Grid.Column="2"
             Grid.ColumnSpan="3"
             Margin="10,5"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Bottom" />
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Bottom"
+            Text="{Binding FirmWareVersion}" />
         <Label
             Grid.Row="8"
             Grid.Column="5"
@@ -473,8 +499,9 @@
             Grid.ColumnSpan="3"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
+            DataContext="{Binding Settings}"
             Style="{x:Null}"
-            Text="Точка доступа (APN)" />
+            Text="{Binding Path=APN}" />
 
         <Label
             Grid.Row="9"
@@ -482,12 +509,14 @@
             VerticalAlignment="Center"
             Content="Импульс / литр" />
         <TextBox
+            x:Name="PulsePerLitreTxt"
             Grid.Row="9"
             Grid.Column="1"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
+            DataContext="{Binding Settings}"
             Style="{x:Null}"
-            Text="320" />
+            Text="{Binding Path=PulsePerLitre}" />
         <Label
             Grid.Row="9"
             Grid.Column="5"
@@ -501,7 +530,8 @@
             Grid.ColumnSpan="3"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Text="89048249518" />
+            DataContext="{Binding Settings}"
+            Text="{Binding Path=SIMNumber}" />
 
         <Label
             Grid.Row="10"
@@ -513,8 +543,9 @@
             Grid.Column="1"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
+            DataContext="{Binding Settings}"
             Style="{x:Null}"
-            Text="5" />
+            Text="{Binding Path=MaxLitres}" />
         <CheckBox
             Grid.Row="10"
             Grid.Column="2"
@@ -536,7 +567,7 @@
             Grid.ColumnSpan="3"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Text="СК, Шакирова, 9" />
+            Text="{Binding Path=Address}" />
 
 
         <Label
@@ -549,8 +580,9 @@
             Grid.Column="1"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
+            DataContext="{Binding Settings}"
             Style="{x:Null}"
-            Text="100" />
+            Text="{Binding Path=CoinRatio}" />
         <TextBlock
             Grid.Row="11"
             Grid.Column="2"
@@ -624,8 +656,9 @@
             Grid.Column="1"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
+            DataContext="{Binding Settings}"
             Style="{x:Null}"
-            Text="1000" />
+            Text="{Binding Path=BanknoteRatio}" />
 
         <TextBlock
             Grid.Row="12"

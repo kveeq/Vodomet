@@ -95,5 +95,21 @@ namespace Vodomet.Model
                 return vodomats;
             }
         }
+
+        public void GetSetting()
+        {
+            Settings = Setting.GetSetting(IdSettings);
+        }
+
+        public void Update()
+        {
+            string sqlExpression = $"Update Vodomat Set FirmwareVersion = '{FirmWareVersion}', Address = '{Address}' Where Id = {Id} ";
+            using (SqlConnection connection = new SqlConnection(App.connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }

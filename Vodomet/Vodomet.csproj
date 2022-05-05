@@ -13,4 +13,24 @@
     <PackageReference Include="Microsoft.Data.SqlClient" Version="3.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="View\DisplayAlerts\DeleteAlertWindowUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\DisplayAlerts\EditAlertWindowUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="View\DisplayAlerts\DeleteAlertWindowUser.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\DisplayAlerts\EditAlertWindowUser.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
 </Project>
